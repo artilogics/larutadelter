@@ -87,7 +87,7 @@ public class GameSetupManager : MonoBehaviour
 
         if (!hasDay || !hasMonth || !hasYear || !hasCode)
         {
-            if (startGameFeedbackText) startGameFeedbackText.text = "Please select all Date fields and fill the Game Code.";
+            if (startGameFeedbackText) startGameFeedbackText.text = "Selecciona tots els camps de data i omple el codi de joc.";
             return;
         }
 
@@ -139,7 +139,7 @@ public class GameSetupManager : MonoBehaviour
         if (playerConfigStep) playerConfigStep.SetActive(true);
 
         // Reset UI for current player
-        configTitle.text = $"Setup Player {currentPlayerIndex + 1}";
+        configTitle.text = $"Configura Personatge {currentPlayerIndex + 1}";
         nameInput.text = "";
         
         selectedModelIndex = -1;
@@ -288,9 +288,9 @@ public class GameSetupManager : MonoBehaviour
 
         if (!isValid)
         {
-            if (!modelOk) if (feedbackText) feedbackText.text = "Select a Model!";
-            else if (!colorOk) if (feedbackText) feedbackText.text = "Select a Color!";
-            else if (!nameOk) if (feedbackText) feedbackText.text = "Enter a Name!";
+            if (!modelOk) if (feedbackText) feedbackText.text = "Selecciona un Model!";
+            else if (!colorOk) if (feedbackText) feedbackText.text = "Selecciona un Color!";
+            else if (!nameOk) if (feedbackText) feedbackText.text = "Escriu un Nom!";
         }
         else
         {

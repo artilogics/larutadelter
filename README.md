@@ -1,57 +1,65 @@
-# Unity 2D Board Game
+# La Ruta del Ter
 
-A local multiplayer turn-based board game built with Unity. Players compete to reach the end of the path by rolling dice, navigating obstacles, and utilizing special tiles.
+Projecte Unity 3D d’un joc de taula digital basat en La Ruta del Ter. Desenvolupat per al Consorci del Ter dins l’equip Artilogics, amb suport formatiu de l’Escola CIFOG. Proposta lúdica i educativa per explorar el territori, el patrimoni natural i cultural, i promoure la sostenibilitat al llarg del riu Ter.
 
-## 🎮 Game Overview
+## 🎮 Resum del Joc
 
-- **Genre**: 2D Board Game / Party Game
-- **Players**: 2 Players (Local Multiplayer)
-- **Engine**: Unity 2D
-- **Status**: Prototype / In Development
+- **Gènere**: Joc de taula 3D / Party Game
+- **Jugadors**: Multijugador Local (2 o més jugadors)
+- **Motor**: Unity 6 (6000.3.11f1)
+- **Estat**: Prototip / En Desenvolupament
 
-## ✨ Features
+## ✨ Funcionalitats Principals
 
-- **Turn-Based Gameplay**: Classic roll-and-move mechanics.
-- **Physics-Based Dice**: Visual 3D/2D dice rolling simulation.
-- **Special Tiles**:
-  - 🟢 **Shortcut**: Teleport to a further point on the path.
-  - 🔴 **Skip Turn**: Lose your next turn.
-  - ⭐ **Extra Roll**: Get an immediate second turn.
-- **Player Animations**:
-  - Smooth hopping movement between waypoints.
-  - "Juice" effects: Squashing/stretching on landing and bouncing on interaction.
-- **Dynamic Path System**: Waypoint-based movement system handled by `FollowThePath`.
+- **Sistema de Trivia Interactiu**:
+  - Preguntes sobre la natura, el patrimoni i la cultura del territori.
+  - Respostes encertades permeten tornar a tirar el dau.
+- **Daus 3D Físics**: Simulació de llançament amb detecció de resultats en temps real.
+- **Taulell Dinàmic**: El taulell gira automàticament per enfocar el jugador actiu, millorant la immersió.
+- **Configuració de Jugadors Personalitzada**:
+  - Pantalla de selecció de personatges i colors.
+  - Suport per a models 3D i sprites 2D.
+- **Caselles Especials**:
+  - 🟢 **Drecera**: Permet saltar a punts avançats del camí (amb opció d'elecció).
+  - 🔴 **Pèrdua de Torn**: El jugador es queda una ronda sense jugar.
+  - ⭐ **Tirada Extra**: Permet un segon llançament immediat.
+  - ❓ **Casella de Pregunta**: Activa el sistema de trivia.
+- **Animacions i "Feel" (Juice)**:
+  - Moviment suau entre punts (waypoint navigation).
+  - Efectes visuals de rebot ("squash and stretch") en aterrar i interactuar.
 
-## 🛠️ Configuration & Technical Details
+## 🛠️ Detalls Tècnics & Configuració
 
-- **Scripts**:
-  - `GameControl.cs`: Manages the game state, turns, UI updates, and win conditions.
-  - `FollowThePath.cs`: Handles player movement physics, waypoint navigation, and animations.
-  - `Dice.cs`: Manages dice randomization and result processing.
-  - `SpecialTile.cs`: Defines the behavior of interactive board tiles.
-- **Input**: Mouse/Touch interaction for rolling dice and UI buttons.
+- **Scripts Principals**:
+  - `GameControl.cs`: Gestiona l'estat del joc, els torns, les condicions de victòria i l'interfície.
+  - `BoardController.cs`: Controla la rotació i el moviment físic del taulell.
+  - `QuestionManager.cs`: Administra la càrrega de preguntes des de fitxers CSV i la lògica de trivia.
+  - `FollowThePath.cs`: Gestiona el moviment dels jugadors i les animacions de salt.
+  - `Dice3D.cs`: Controla la física dels daus en l'espai 3D.
+- **Interfície (UI)**: Panells de control dinàmics que mostren l'estat de cada jugador i l'indicador de torn.
+- **Àudio**: Sistema de so integrat per a accions com llançaments de dau, encerts i canvis de torn.
 
-## 🚀 Getting Started
+## 🚀 Començar a Jugar
 
-1. **Clone the repository**:
+1. **Clona el repositori**:
    ```bash
-   git clone https://github.com/YourUsername/Unity-2D-Board-Game.git
+   git clone https://github.com/artilogics/larutadelter.git
    ```
-2. **Open in Unity**:
-   - Launch Unity Hub.
-   - Click "Add" and select the repository folder.
-   - Open the project (Version match recommended).
-3. **Play**:
-   - Open the Main Scene/SampleScene.
-   - Press the Play button in the Editor.
+2. **Obre el projecte a Unity**:
+   - Utilitza **Unity Hub**.
+   - Afegeix la carpeta del repositori.
+   - Recomanat utilitzar la versió **Unity 6 (6000.3.11f1)**.
+3. **Execució**:
+   - Obre l'escena principal a `Assets/Scenes`.
+   - Prem el botó **Play** de l'editor.
 
-## 📝 Roadmap
+## 📝 Full de Ruta (Roadmap)
 
-- [ ] Add more special tile types.
-- [ ] Implement AI for single-player mode.
-- [ ] Add sound effects and background music.
-- [ ] Improve UI/UX with animations.
+- [ ] Afegir més tipus de caselles interactives.
+- [ ] Implementar intel·ligència artificial (IA) per a mode d'un sol jugador.
+- [ ] Ampliar la base de dades de preguntes sobre el patrimoni del Ter.
+- [ ] Millorar els efectes visuals i sonors per a una experiència més premium.
 
-## 📄 License
+## 📄 Llicència
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Aquest projecte està sota la llicència MIT - vegeu el fitxer [LICENSE](LICENSE) per a més detalls.

@@ -78,7 +78,7 @@ public class TriviaPopup : MonoBehaviour
 
         // Display question
         if (questionText != null) questionText.text = currentQuestion.question;
-        if (categoryText != null) categoryText.text = $"Category: {currentQuestion.category}";
+        if (categoryText != null) categoryText.text = $"Categoria: {currentQuestion.category}";
 
         // Set option texts
         if (optionA_Button != null) optionA_Button.GetComponentInChildren<Text>().text = $"A) {currentQuestion.optionA}";
@@ -149,7 +149,7 @@ public class TriviaPopup : MonoBehaviour
         {
             if (correct)
             {
-                feedbackText.text = "✓ CORRECT!";
+                feedbackText.text = "✓ CORRECTE!";
                 feedbackText.color = Color.green;
                 
                 // Audio Feedback
@@ -164,7 +164,7 @@ public class TriviaPopup : MonoBehaviour
             }
             else
             {
-                feedbackText.text = $"✗ WRONG! Correct answer was {currentQuestion.correctAnswer}";
+                feedbackText.text = $"✗ INCORRECTE! La resposta correcta era {currentQuestion.correctAnswer}";
                 feedbackText.color = Color.red;
 
                 // Audio Feedback
@@ -256,14 +256,14 @@ public class TriviaPopup : MonoBehaviour
         {
             int p1Points = PlayerProgress.Instance.GetPoints(1);
             int p1Categories = PlayerProgress.Instance.GetCompletedCategoryCount(1);
-            player1PointsText.text = $"P1: {p1Points} pts | {p1Categories}/8";
+            player1PointsText.text = $"J1: {p1Points} pts | {p1Categories}/8";
         }
 
         if (player2PointsText != null)
         {
             int p2Points = PlayerProgress.Instance.GetPoints(2);
             int p2Categories = PlayerProgress.Instance.GetCompletedCategoryCount(2);
-            player2PointsText.text = $"P2: {p2Points} pts | {p2Categories}/8";
+            player2PointsText.text = $"J2: {p2Points} pts | {p2Categories}/8";
         }
     }
 }

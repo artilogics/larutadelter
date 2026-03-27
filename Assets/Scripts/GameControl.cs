@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -261,7 +261,7 @@ public class GameControl : MonoBehaviour {
         {
             gameOver = true;
             statusText.gameObject.SetActive(true);
-            statusText.text = $"{activePlayer.name} Wins!";
+            statusText.text = $"{activePlayer.name} ha guanyat!";
             if (AudioManager.Instance) AudioManager.Instance.PlayWinSound(); // Audio
             return;
         }
@@ -287,7 +287,7 @@ public class GameControl : MonoBehaviour {
             // Simplified Tile Logic for Refactor
             if (tile.effect == SpecialTile.TileEffect.ExtraRoll)
             {
-                ShowStatus("Extra Roll!", 1.5f);
+                ShowStatus("Tirada extra!", 1.5f);
                 
                 // Focus Board Again
                 if (Instance.boardController != null)
@@ -308,7 +308,7 @@ public class GameControl : MonoBehaviour {
                 // Next time this player plays, they miss it.
                 // But for now, we just switch.
                 // Logic: playerMissTurn[currentPlayerIndex] = true;
-                ShowStatus("Miss Next Turn!", 1.5f);
+                ShowStatus("Perds el següent torn!", 1.5f);
                 playerMissTurn[currentPlayerIndex] = true;
                 SwitchTurn();
                 dice.GetComponent<Dice>().ResetDice();
@@ -318,7 +318,7 @@ public class GameControl : MonoBehaviour {
             {
                  if (tile.possibleDestinations != null && tile.possibleDestinations.Count > 0)
                  {
-                     ShowStatus("Choose Path", 1f);
+                     ShowStatus("Tria el camí", 1f);
                      ShowShortcutOptions(currentPlayerIndex, tile.possibleDestinations);
                      return; // Wait for input
                  }
@@ -334,7 +334,7 @@ public class GameControl : MonoBehaviour {
                           // Callback when popup closes
                           if (correct)
                           {
-                              ShowStatus("Correct! Roll Again!", 2f);
+                              ShowStatus("Correcte! Torna a tirar!", 2f);
                               UpdateUI(); // Update HUD for sockets
                               
                               // Focus Board Again
@@ -351,7 +351,7 @@ public class GameControl : MonoBehaviour {
                           }
                           else
                           {
-                              ShowStatus("Wrong!", 1.5f);
+                              ShowStatus("Incorrecte!", 1.5f);
                               SwitchTurn();
                               dice.GetComponent<Dice>().ResetDice();
                           }
@@ -385,7 +385,7 @@ public class GameControl : MonoBehaviour {
             // Check Miss Turn
             if (playerMissTurn[nextPlayer])
             {
-                if (Instance) Instance.ShowStatus($"Player {nextPlayer+1} Missed Turn!", 1.5f);
+                if (Instance) Instance.ShowStatus($"El jugador {nextPlayer+1} ha perdut el torn!", 1.5f);
                 playerMissTurn[nextPlayer] = false; // Consumed
                 // Loop again to skip
             }
